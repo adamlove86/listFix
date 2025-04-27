@@ -7,27 +7,17 @@ This is a personal fork of Borewit's [listFix](https://github.com/Borewit/listFi
 
 ## Key Differences from Original (Borewit/listFix)
 
-As of the latest commit on this `main` branch, the key additions/changes compared to the upstream `Borewit/listFix` repository are:
+As of the latest commit on this branch, the key additions/changes compared to the upstream `Borewit/listFix` repository are:
 
 - **Unicode Normalization (NFC):** Implemented robust handling of filenames with special characters (e.g., accents like é, ö) across different operating systems by normalizing filenames (NFC) for internal comparisons and matching, while using raw filenames for file system operations. Centralized this logic in a `UnicodeUtils` class.
 - **Persistent Missing File Cache:** Added a cache (`%USERPROFILE%\.listFix()\missingFileCache.json`) that remembers manual fixes for missing files across sessions. If a path is fixed in one playlist, it automatically applies to the same missing path in other playlists opened later.
 - **Save All Dialog:** Introduced a "File > Save All..." menu option that allows saving all open playlists simultaneously. Users can select the desired output format (M3U, M3U8, PLS, WPL) and character encoding (though encoding enforcement depends on the underlying library).
-
-_(Original README content follows)_
-
----
-
-Have you ever spent some time making a playlist, only to have it break when you reorganize your files? listFix() is a Swing application that solves this problem by finding the lost or missing entries in your playlists automatically. Tell it where you keep your media files, load in the playlist you want to fix, and hit the locate button. The program will search your media library for the file and update the playlist accordingly when it finds a match.
-
-If a few files are still missing, they were probably renamed. listFix() has a way of finding these files as well, by scoring the files in your media library with a "similarity" test and offering you a choice of the best potential matches, pre-selecting the matches it deems "best".
 
 ## History
 
 [listFix](https://github.com/Borewit/listFix) is cloned from [sourceforge.net](http://listfix.sourceforge.net/) using [a reposurgeon based script](https://github.com/Borewit/migrate-listFx).
 
 ## Features
-
-_(Includes features from original plus additions in this fork)_
 
 - M3U/M3U8/PLS/WPL Support
 - Find lost/missing/renamed playlist entries (Exact & Closest Matches)
